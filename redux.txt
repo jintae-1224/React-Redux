@@ -11,3 +11,5 @@
 1.2 사용하기 : 준비한 스토어를 리액트 컴포넌트에서 사용하기
     * import react-redux
     * connect(& hooks) 함수를 이용해서 컴포넌트에 연결
+
+설치 : npm i redux
