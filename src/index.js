@@ -4,25 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store'
-import {addTodo} from './redux/actions'
+import {addTodo, completeTodo, showComplete} from './redux/actions'
 
-// store에 상태가 변경되면 호출되는 형태
-const unsubscribe = store.subscribe(()=>{
+
+store.subscribe(()=>{
   console.log(store.getState());
 });
 
-// {dispatch: ƒ, subscribe: ƒ, getState: ƒ, replaceReducer: ƒ, @@observable: ƒ}
-// @@observable: ƒ observable()
-// dispatch: ƒ dispatch(action)
-// getState: ƒ getState()
-// replaceReducer: ƒ replaceReducer(nextReducer)
-// subscribe: ƒ subscribe(listener)
-// [[Prototype]]: Object
-
-store.dispatch(addTodo("coding"));
-store.dispatch(addTodo("read book"));
-store.dispatch(addTodo("eat"));
-unsubscribe();
+store.dispatch(addTodo("할일"));
+store.dispatch(completeTodo(0));
+store.dispatch(showComplete());
 
 ReactDOM.render(
   <React.StrictMode>
