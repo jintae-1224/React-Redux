@@ -1,10 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-import { addTodo } from './redux/actions';
-import useReduxDispatch from './hooks/useReduxDispatch';
-import useReduxState from './hooks/useReduxState';
-import TodoList from './components/TodoList';
-import TodoForm from './components/TodoForm';
+import logo from "./logo.svg";
+import "./App.css";
+import TodoListContainer from "./containers/TodoListContainer";
+import TodoFormContainer from "./containers/TodoFormContainer";
 
 //custom hook
 function App() {
@@ -13,8 +10,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         {/* json을 문자열로 */}
-        <TodoList />
-        <TodoForm />
+        <TodoListContainer />
+        <TodoFormContainer />
       </header>
     </div>
   );
